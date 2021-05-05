@@ -1,0 +1,20 @@
+type Collection @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  Games: [Game!] @connection(keyName: "byCollection", fields: ["id"])
+  collectionName: String
+  userID: ID
+}
+
+type Game @model @auth(rules: [{allow: public}]) @key(name: "byCollection", fields: ["collectionID"]) {
+  id: ID!
+  title: String
+  operatingConsole: String
+  collectionID: ID
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  realName: String
+  Collections: [Collection] @connection(keyName: "byUser", fields: ["id"])
+  userName: String
+}
