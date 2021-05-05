@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../logo.svg";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { SiteLink } from "../../common/components";
 
 const LandingPageContainer = styled.header`
   background-color: #282c34;
@@ -15,7 +15,6 @@ const LandingPageContainer = styled.header`
 `;
 const Logo = styled.img``;
 const Intro = styled.p``;
-const SiteLink = styled(Link)``;
 
 export const LandingPage: React.FC = () => {
   return (
