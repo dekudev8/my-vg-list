@@ -2,7 +2,7 @@
 
 My-VG-List - keep track of games you've played and share with friends
 
-Owned and maintained by Malcolm Snyder
+Owned and maintained by robert bringhurst
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
