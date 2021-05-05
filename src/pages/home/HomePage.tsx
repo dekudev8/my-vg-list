@@ -11,7 +11,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <TopHeader>HEY THERE GAMERS ARE YOU READY TO GAME</TopHeader>
-      <SiteLink to='/'>Go back to the LAMEding page</SiteLink>
+      <SiteLink to='/'>Go back to the landing page</SiteLink>
     </>
   );
 };
