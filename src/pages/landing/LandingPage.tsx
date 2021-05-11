@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SiteLink } from "../../common/components";
 
 const LandingPageContainer = styled.header`
-  background-color: #282c34;
+  background-color: blanchedalmond;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,8 +13,13 @@ const LandingPageContainer = styled.header`
   font-size: calc(10px + 2vmin);
   color: white;
 `;
-const Logo = styled.img``;
-const Intro = styled.p``;
+const Logo = styled.img`
+  transform: scale(0.5);
+  margin-bottom: -80px;
+`;
+const Intro = styled.p`
+  color: black;
+`;
 
 export const LandingPage: React.FC = () => {
   return (
@@ -22,7 +27,9 @@ export const LandingPage: React.FC = () => {
       <LandingPageContainer>
         <Logo src={logo} />
         <Intro>
-          Edit <code>src/App.js</code> and save to reload.
+          Hey there! This is a website where you save a list of
+          <br />
+          video games you have played. Come build a collection!
         </Intro>
         <SiteLink to='/main'>Go to real site</SiteLink>
       </LandingPageContainer>
