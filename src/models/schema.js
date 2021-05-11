@@ -37,6 +37,13 @@ export const schema = {
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
+                },
+                "testField510": {
+                    "name": "testField510",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -206,5 +213,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "d5199f144e775b5f75c1567cb4e04fda"
+    "version": "0a870934873d47fdc5c685b02f85a9d8"
 };

@@ -9,6 +9,7 @@ export declare class Collection {
   readonly Games?: Game[];
   readonly collectionName?: string;
   readonly userID?: string;
+  readonly testField510?: boolean;
   constructor(init: ModelInit<Collection>);
   static copyOf(source: Collection, mutator: (draft: MutableModel<Collection>) => MutableModel<Collection> | void): Collection;
 }

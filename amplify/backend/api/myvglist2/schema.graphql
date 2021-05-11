@@ -3,6 +3,7 @@ type Collection @model @auth(rules: [{allow: public}]) @key(name: "byUser", fiel
   Games: [Game!] @connection(keyName: "byCollection", fields: ["id"])
   collectionName: String
   userID: ID
+  testField510: Boolean
 }
 
 type Game @model @auth(rules: [{allow: public}]) @key(name: "byCollection", fields: ["collectionID"]) {
@@ -18,3 +19,4 @@ type User @model @auth(rules: [{allow: public}]) {
   Collections: [Collection] @connection(keyName: "byUser", fields: ["id"])
   userName: String
 }
+ 
