@@ -20,5 +20,12 @@
         }
       }
     }
+  },
+  "function": {
+    "getGamesFromIgdb": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }

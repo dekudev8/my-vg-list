@@ -10,6 +10,14 @@
       "StackName": "amplify-myvglist2-staging-54125",
       "StackId": "arn:aws:cloudformation:us-east-1:099808006962:stack/amplify-myvglist2-staging-54125/8801b440-ad64-11eb-af25-0ea1b88f1a89",
       "AmplifyAppId": "d1xa2e37tk73w2"
+    },
+    "categories": {
+      "function": {
+        "getGamesFromIgdb": {
+          "deploymentBucketName": "amplify-myvglist2-staging-54125-deployment",
+          "s3Key": "amplify-builds/getGamesFromIgdb-42596252436367417550-build.zip"
+        }
+      }
     }
   }
 }
