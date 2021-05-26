@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "myvglist2",
+  "projectName": "MyVGList",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -10,7 +10,7 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "build",
-      "BuildCommand": "yarn run build",
+      "BuildCommand": "yarn build",
       "StartCommand": "yarn start"
     }
   }

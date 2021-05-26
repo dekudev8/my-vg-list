@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "getGamesFromIgdb",
+            "getGameTitlesFromIgdb",
             {
               "Fn::Join": [
                 "",
                 [
-                  "getGamesFromIgdb",
+                  "getGameTitlesFromIgdb",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "myvglist2LambdaRole4fbff114",
+            "myvglist2LambdaRole835c5b97",
             {
               "Fn::Join": [
                 "",
                 [
-                  "myvglist2LambdaRole4fbff114",
+                  "myvglist2LambdaRole835c5b97",
                   "-",
                   {
                     "Ref": "env"
