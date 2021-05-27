@@ -17,6 +17,9 @@
           "deploymentBucketName": "amplify-myvglist-staging-21459-deployment",
           "s3Key": "amplify-builds/getGameTitlesFromIgdb-49747455486f6d453555-build.zip"
         }
+      },
+      "auth": {
+        "myvglist2fd5ffb3": {}
       }
     }
   }

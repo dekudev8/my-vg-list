@@ -1,12 +1,11 @@
-type Collection @model @auth(rules: [{allow: public}]) @key(name: "byUser", fields: ["userID"]) {
+type Collection @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow: public}]) {
   id: ID!
   Games: [Game!] @connection(keyName: "byCollection", fields: ["id"])
   collectionName: String
   userID: ID
-  testField510: Boolean
 }
 
-type Game @model @auth(rules: [{allow: public}]) @key(name: "byCollection", fields: ["collectionID"]) {
+type Game @model @key(name: "byCollection", fields: ["collectionID"]) @auth(rules: [{allow: public}]) {
   id: ID!
   title: String
   operatingConsole: String
