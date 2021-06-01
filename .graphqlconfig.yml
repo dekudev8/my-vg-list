@@ -1,6 +1,6 @@
 projects:
-  myvglist2-staging:
-    schemaPath: src/graphql/schema.json
+  myvglist2:
+    schemaPath: amplify/backend/api/myvglist2/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
     excludes:
@@ -11,8 +11,8 @@ projects:
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
         region: us-east-2
-        apiId: 53twsojomfe2dn2qnhw7cnnhfa
-        maxDepth: 2
+        apiId: null
+        maxDepth: 3
 extensions:
   amplify:
     version: 3

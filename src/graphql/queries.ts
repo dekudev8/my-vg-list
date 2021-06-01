@@ -2,54 +2,264 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getCollection = /* GraphQL */ `
-  query GetCollection($id: ID!) {
-    getCollection(id: $id) {
+export const getPresentedGame = /* GraphQL */ `
+  query GetPresentedGame($id: ID!) {
+    getPresentedGame(id: $id) {
       id
-      collectionName
+      internalId
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPresentedGames = /* GraphQL */ `
+  query ListPresentedGames(
+    $filter: ModelPresentedGameFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPresentedGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        internalId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPresentedGames = /* GraphQL */ `
+  query SyncPresentedGames(
+    $filter: ModelPresentedGameFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPresentedGames(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        internalId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getRawGame = /* GraphQL */ `
+  query GetRawGame($id: ID!) {
+    getRawGame(id: $id) {
+      id
+      internalId
+      sourceId
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listRawGames = /* GraphQL */ `
+  query ListRawGames(
+    $filter: ModelRawGameFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRawGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        internalId
+        sourceId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncRawGames = /* GraphQL */ `
+  query SyncRawGames(
+    $filter: ModelRawGameFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncRawGames(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        internalId
+        sourceId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getRawGameData = /* GraphQL */ `
+  query GetRawGameData($id: ID!) {
+    getRawGameData(id: $id) {
+      id
+      sourceId
+      title
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listRawGameDatas = /* GraphQL */ `
+  query ListRawGameDatas(
+    $filter: ModelRawGameDataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRawGameDatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        sourceId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncRawGameData = /* GraphQL */ `
+  query SyncRawGameData(
+    $filter: ModelRawGameDataFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncRawGameData(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        sourceId
+        title
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getUserCollection = /* GraphQL */ `
+  query GetUserCollection($id: ID!) {
+    getUserCollection(id: $id) {
+      id
       userID
+      displayName
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
       Games {
+        items {
+          id
+          internalId
+          collectionID
+          title
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         nextToken
         startedAt
       }
     }
   }
 `;
-export const listCollections = /* GraphQL */ `
-  query ListCollections(
-    $filter: ModelCollectionFilterInput
+export const listUserCollections = /* GraphQL */ `
+  query ListUserCollections(
+    $filter: ModelUserCollectionFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUserCollections(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        collectionName
         userID
+        displayName
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        Games {
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt
     }
   }
 `;
-export const syncCollections = /* GraphQL */ `
-  query SyncCollections(
-    $filter: ModelCollectionFilterInput
+export const syncUserCollections = /* GraphQL */ `
+  query SyncUserCollections(
+    $filter: ModelUserCollectionFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncCollections(
+    syncUserCollections(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -57,26 +267,30 @@ export const syncCollections = /* GraphQL */ `
     ) {
       items {
         id
-        collectionName
         userID
+        displayName
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        Games {
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt
     }
   }
 `;
-export const getGame = /* GraphQL */ `
-  query GetGame($id: ID!) {
-    getGame(id: $id) {
+export const getUserGame = /* GraphQL */ `
+  query GetUserGame($id: ID!) {
+    getUserGame(id: $id) {
       id
-      title
-      operatingConsole
+      internalId
       collectionID
+      title
       _version
       _deleted
       _lastChangedAt
@@ -85,18 +299,18 @@ export const getGame = /* GraphQL */ `
     }
   }
 `;
-export const listGames = /* GraphQL */ `
-  query ListGames(
-    $filter: ModelGameFilterInput
+export const listUserGames = /* GraphQL */ `
+  query ListUserGames(
+    $filter: ModelUserGameFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUserGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        operatingConsole
+        internalId
         collectionID
+        title
         _version
         _deleted
         _lastChangedAt
@@ -108,14 +322,14 @@ export const listGames = /* GraphQL */ `
     }
   }
 `;
-export const syncGames = /* GraphQL */ `
-  query SyncGames(
-    $filter: ModelGameFilterInput
+export const syncUserGames = /* GraphQL */ `
+  query SyncUserGames(
+    $filter: ModelUserGameFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncGames(
+    syncUserGames(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -123,9 +337,9 @@ export const syncGames = /* GraphQL */ `
     ) {
       items {
         id
-        title
-        operatingConsole
+        internalId
         collectionID
+        title
         _version
         _deleted
         _lastChangedAt
@@ -143,12 +357,23 @@ export const getUser = /* GraphQL */ `
       id
       realName
       userName
+      email
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
       Collections {
+        items {
+          id
+          userID
+          displayName
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
         nextToken
         startedAt
       }
@@ -166,11 +391,16 @@ export const listUsers = /* GraphQL */ `
         id
         realName
         userName
+        email
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        Collections {
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt
@@ -194,11 +424,16 @@ export const syncUsers = /* GraphQL */ `
         id
         realName
         userName
+        email
         _version
         _deleted
         _lastChangedAt
         createdAt
         updatedAt
+        Collections {
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt

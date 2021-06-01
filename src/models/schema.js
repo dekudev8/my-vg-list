@@ -1,7 +1,164 @@
 export const schema = {
     "models": {
-        "Collection": {
-            "name": "Collection",
+        "PresentedGame": {
+            "name": "PresentedGame",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "internalId": {
+                    "name": "internalId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "PresentedGames",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "RawGame": {
+            "name": "RawGame",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "internalId": {
+                    "name": "internalId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sourceId": {
+                    "name": "sourceId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "RawGames",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "RawGameData": {
+            "name": "RawGameData",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "sourceId": {
+                    "name": "sourceId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "RawGameData",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "UserCollection": {
+            "name": "UserCollection",
             "fields": {
                 "id": {
                     "name": "id",
@@ -14,7 +171,7 @@ export const schema = {
                     "name": "Games",
                     "isArray": true,
                     "type": {
-                        "model": "Game"
+                        "model": "UserGame"
                     },
                     "isRequired": true,
                     "attributes": [],
@@ -24,23 +181,23 @@ export const schema = {
                         "associatedWith": "collectionID"
                     }
                 },
-                "collectionName": {
-                    "name": "collectionName",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "userID": {
                     "name": "userID",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
+                },
+                "displayName": {
+                    "name": "displayName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Collections",
+            "pluralName": "UserCollections",
             "attributes": [
                 {
                     "type": "model",
@@ -73,8 +230,8 @@ export const schema = {
                 }
             ]
         },
-        "Game": {
-            "name": "Game",
+        "UserGame": {
+            "name": "UserGame",
             "fields": {
                 "id": {
                     "name": "id",
@@ -83,15 +240,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "title": {
-                    "name": "title",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "operatingConsole": {
-                    "name": "operatingConsole",
+                "internalId": {
+                    "name": "internalId",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -103,10 +253,17 @@ export const schema = {
                     "type": "ID",
                     "isRequired": false,
                     "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Games",
+            "pluralName": "UserGames",
             "attributes": [
                 {
                     "type": "model",
@@ -115,7 +272,7 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byCollection",
+                        "name": "byUserCollection",
                         "fields": [
                             "collectionID"
                         ]
@@ -160,7 +317,7 @@ export const schema = {
                     "name": "Collections",
                     "isArray": true,
                     "type": {
-                        "model": "Collection"
+                        "model": "UserCollection"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -172,6 +329,13 @@ export const schema = {
                 },
                 "userName": {
                     "name": "userName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "email": {
+                    "name": "email",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -206,5 +370,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "d5199f144e775b5f75c1567cb4e04fda"
+    "version": "da87a5fd4df894d643f76a3b794a9560"
 };

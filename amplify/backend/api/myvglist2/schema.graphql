@@ -1,21 +1,41 @@
-type Collection @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow: public}]) {
+type PresentedGame @model @auth(rules: [{allow: public}]) {
   id: ID!
-  Games: [Game!] @connection(keyName: "byCollection", fields: ["id"])
-  collectionName: String
-  userID: ID
+  internalId: String
+  title: String
 }
 
-type Game @model @key(name: "byCollection", fields: ["collectionID"]) @auth(rules: [{allow: public}]) {
+type RawGame @model @auth(rules: [{allow: public}]) {
   id: ID!
+  internalId: String
+  sourceId: String
   title: String
-  operatingConsole: String
+}
+
+type RawGameData @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  sourceId: String
+  title: String
+}
+
+type UserCollection @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  Games: [UserGame!] @connection(keyName: "byUserCollection", fields: ["id"])
+  userID: ID
+  displayName: String
+}
+
+type UserGame @model @key(name: "byUserCollection", fields: ["collectionID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  internalId: String
   collectionID: ID
+  title: String
 }
 
 type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   realName: String
-  Collections: [Collection] @connection(keyName: "byUser", fields: ["id"])
+  Collections: [UserCollection] @connection(keyName: "byUser", fields: ["id"])
   userName: String
+  email: String
 }
  
